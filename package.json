@@ -1,0 +1,13 @@
+{
+  "name": "game-seo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check.mjs",
+    "check:preview": "node scripts/check-preview.mjs",
+    "dev": "node scripts/build.mjs && node scripts/serve.mjs"
+  }
+}
