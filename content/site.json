@@ -26,31 +26,14 @@
       "minutes": 5,
       "file": "once-human-beginner.html",
       "sections": [
-        {
-          "id": "first-steps",
-          "title": "01. 튜토리얼과 다음 목표"
-        },
-        {
-          "id": "memetics",
-          "title": "02. 필요한 밈부터 해금하기"
-        },
-        {
-          "id": "exploration",
-          "title": "03. 정착지 탐험하기"
-        },
-        {
-          "id": "equipment",
-          "title": "04. 첫 장비 제작하기"
-        },
-        {
-          "id": "checklist",
-          "title": "05. 다음 탐험 전 체크리스트"
-        }
+        { "id": "first-steps", "title": "01. 튜토리얼과 다음 목표" },
+        { "id": "memetics", "title": "02. 필요한 밈부터 해금하기" },
+        { "id": "exploration", "title": "03. 정착지 탐험하기" },
+        { "id": "equipment", "title": "04. 첫 장비 제작하기" },
+        { "id": "checklist", "title": "05. 다음 탐험 전 체크리스트" }
       ],
       "searchIntent": "once-human-first-steps",
-      "searchQuestions": [
-        "원스 휴먼 처음 시작하면 무엇부터 해야 하나요"
-      ],
+      "searchQuestions": ["원스 휴먼 처음 시작하면 무엇부터 해야 하나요"],
       "quickAnswer": {
         "text": "튜토리얼과 현재 임무를 먼저 진행한 뒤, 다음 제작에 필요한 기술과 재료만 확인하세요. 탐험할 정착지의 권장 레벨과 목표를 읽고 장비를 준비하면 됩니다.",
         "steps": [
@@ -60,14 +43,8 @@
         ]
       },
       "quickFacts": [
-        {
-          "label": "대상",
-          "value": "처음 시작해 탐험·제작 순서를 찾는 플레이어"
-        },
-        {
-          "label": "선행 조건",
-          "value": "튜토리얼 진행 후 현재 임무 확인"
-        }
+        { "label": "대상", "value": "처음 시작해 탐험·제작 순서를 찾는 플레이어" },
+        { "label": "선행 조건", "value": "튜토리얼 진행 후 현재 임무 확인" }
       ],
       "reviewed": true,
       "reviewedDate": "2026-10-23",
@@ -76,40 +53,13 @@
       "freshness": "patch-sensitive",
       "reviewNote": "2024년 기초 자료와 2026년 패치 문서를 대조했습니다. 공식 영문 2.3.1 패치는 Memetics를 Tech로 바꾼 기록이 있습니다. 보존한 본문에는 과거의 ‘밈’ 용어가 남아 있으며, 현재 한국어 UI와 해금 조건은 게임 내 재확인이 필요합니다. 이 글은 최신 버전 전체 검수 완료 상태가 아닙니다.",
       "reviewSources": [
-        {
-          "title": "공식 기초 제작·기술 안내",
-          "url": "https://www.oncehuman.game/wiki/20240520/37492_1156112.html",
-          "published": "2024-05-21",
-          "checkedDate": "2026-10-23",
-          "note": "당시 튜토리얼·기술 해금 안내"
-        },
-        {
-          "title": "공식 정착지 탐험 안내",
-          "url": "https://www.oncehuman.game/wiki/20240520/37492_1156104.html",
-          "published": "2024-05-20",
-          "checkedDate": "2026-10-23",
-          "note": "권장 레벨·탐험 목표 확인"
-        },
-        {
-          "title": "공식 장비 제작 안내",
-          "url": "https://www.oncehuman.game/wiki/20240516/37492_1155622.html",
-          "published": "2024-05-16",
-          "checkedDate": "2026-10-23",
-          "note": "설계도와 제작대에 대한 기초 흐름"
-        },
-        {
-          "title": "공식 2.3.1 업데이트: 용어 변경",
-          "url": "https://www.oncehuman.game/m/news/update/20260121/40780_1282991.html",
-          "published": "2026-01-21",
-          "checkedDate": "2026-10-23",
-          "note": "영문 Memetics → Tech 변경. 현재 한국어 UI 미확인"
-        }
+        { "title": "공식 기초 제작·기술 안내", "url": "https://www.oncehuman.game/wiki/20240520/37492_1156112.html", "published": "2024-05-21", "checkedDate": "2026-10-23", "note": "당시 튜토리얼·기술 해금 안내" },
+        { "title": "공식 정착지 탐험 안내", "url": "https://www.oncehuman.game/wiki/20240520/37492_1156104.html", "published": "2024-05-20", "checkedDate": "2026-10-23", "note": "권장 레벨·탐험 목표 확인" },
+        { "title": "공식 장비 제작 안내", "url": "https://www.oncehuman.game/wiki/20240516/37492_1155622.html", "published": "2024-05-16", "checkedDate": "2026-10-23", "note": "설계도와 제작대에 대한 기초 흐름" },
+        { "title": "공식 2.3.1 업데이트: 용어 변경", "url": "https://www.oncehuman.game/m/news/update/20260121/40780_1282991.html", "published": "2026-01-21", "checkedDate": "2026-10-23", "note": "영문 Memetics → Tech 변경. 현재 한국어 UI 미확인" }
       ],
       "relatedGuides": [
-        {
-          "slug": "play-with-friends-same-server",
-          "reason": "친구와 시작할 계획이라면 캐릭터 진행 전에 서버를 먼저 맞추세요."
-        }
+        { "slug": "play-with-friends-same-server", "reason": "친구와 시작할 계획이라면 캐릭터 진행 전에 서버를 먼저 맞추세요." }
       ],
       "reviewWarning": "본문의 ‘밈’ 등은 2024년 자료의 용어입니다. 현재 한국어 메뉴와 해금 조건은 게임 내 재확인이 필요합니다."
     },
@@ -125,34 +75,13 @@
       "minutes": 4,
       "file": "once-human-play-with-friends.html",
       "sections": [
-        {
-          "id": "region",
-          "title": "01. 먼저 같은 지역인지 확인하기"
-        },
-        {
-          "id": "server",
-          "title": "02. 친구가 접속한 서버 이름 확인하기"
-        },
-        {
-          "id": "scenario",
-          "title": "03. 시나리오와 서버 같이 맞추기"
-        },
-        {
-          "id": "invite-code",
-          "title": "04. 친구 서버가 가득 찼다면 특별 초대 코드 사용하기"
-        },
-        {
-          "id": "world",
-          "title": "05. 같은 서버인데 친구가 보이지 않을 때"
-        },
-        {
-          "id": "different-server",
-          "title": "06. 이미 다른 서버에서 시작했다면"
-        },
-        {
-          "id": "console",
-          "title": "07. 콘솔 플레이어가 확인할 점"
-        }
+        { "id": "region", "title": "01. 먼저 같은 지역인지 확인하기" },
+        { "id": "server", "title": "02. 친구가 접속한 서버 이름 확인하기" },
+        { "id": "scenario", "title": "03. 시나리오와 서버 같이 맞추기" },
+        { "id": "invite-code", "title": "04. 친구 서버가 가득 찼다면 특별 초대 코드 사용하기" },
+        { "id": "world", "title": "05. 같은 서버인데 친구가 보이지 않을 때" },
+        { "id": "different-server", "title": "06. 이미 다른 서버에서 시작했다면" },
+        { "id": "console", "title": "07. 콘솔 플레이어가 확인할 점" }
       ],
       "searchIntent": "once-human-play-with-friends",
       "searchQuestions": [
@@ -170,21 +99,10 @@
         "caution": "같은 서버인데 친구가 안 보이면 서브 월드를 확인하세요. [Console] 서버는 콘솔 전용이며, 서버 이동 전에는 물자·진행 데이터 계승 규칙을 읽으세요."
       },
       "quickFacts": [
-        {
-          "label": "필요 조건",
-          "value": "같은 지역·시나리오·서버 선택"
-        },
-        {
-          "label": "크로스플레이",
-          "value": "공식 FAQ상 지원. [Console] 서버는 콘솔만 접속 가능"
-        }
+        { "label": "필요 조건", "value": "같은 지역·시나리오·서버 선택" },
+        { "label": "크로스플레이", "value": "공식 FAQ상 지원. [Console] 서버는 콘솔만 접속 가능" }
       ],
-      "platforms": [
-        "PC",
-        "모바일",
-        "PS5",
-        "Xbox Series X|S"
-      ],
+      "platforms": ["PC", "모바일", "PS5", "Xbox Series X|S"],
       "reviewed": true,
       "reviewedDate": "2026-10-23",
       "sourceType": "official",
@@ -192,42 +110,83 @@
       "freshness": "patch-sensitive",
       "reviewNote": "공식 FAQ Q20~Q22와 2026년 10월 서버 공지에서 서버 선택·초대 코드·플랫폼 예외를 대조했습니다. 2025년 FAQ의 서버 이동 안내보다 2026년 FAQ를 우선 참고했습니다. 지역·플랫폼별 실제 화면과 현재 서버의 초대 제한은 직접 확인하지 못했으므로 전체 검수 완료로 표시하지 않습니다.",
       "reviewSources": [
+        { "title": "콘솔판 출시 FAQ Q2·Q20~Q22", "url": "https://www.oncehuman.game/kr/news/update/20260820/40776_1311774.html", "published": "2026-08-27", "checkedDate": "2026-10-23", "note": "문서 표시 날짜 기준. 지역·초대·서버 이동·콘솔 예외" },
+        { "title": "금기의 섬 및 RaidZone 서버 공지", "url": "https://www.oncehuman.game/kr/news/update/20261020/40776_1317127.html", "published": "2026-10-20", "checkedDate": "2026-10-23", "note": "더 많은 서버와 특별 초대 코드 표기를 대조" },
+        { "title": "날코트 대륙 생존 가이드", "url": "https://www.oncehuman.game/kr/news/update/20250423/40776_1229727.html", "published": "2025-04-23", "checkedDate": "2026-10-23", "note": "서브 월드 이동 안내 대조" },
+        { "title": "과거 커뮤니티 FAQ", "url": "https://www.oncehuman.game/kr/banner/20250918/41909_1259975.html", "published": "2025-09-18", "checkedDate": "2026-10-23", "note": "서버 간 이동에 관한 과거 안내는 2026년 FAQ보다 우선하지 않음" }
+      ],
+      "relatedGuides": [
+        { "slug": "beginner-guide", "reason": "서버를 맞췄다면 초반 탐험과 장비 제작의 진행 순서를 확인하세요." }
+      ],
+      "reviewWarning": "공식 문서로 대조한 안내입니다. 현재 서버의 초대 제한과 플랫폼별 화면은 게임 내에서 다시 확인하세요."
+    },
+    {
+      "slug": "beginner-server-selection",
+      "game": "once-human",
+      "title": "Once Human 초보자 서버 선택 방법: 어떤 시나리오·서버가 좋을까?",
+      "shortTitle": "초보자는 어떤 서버를 선택해야 할까?",
+      "description": "Once Human을 처음 시작할 때 어떤 시나리오와 서버를 선택하면 좋은지 정리했습니다. 초보자 추천 시나리오, 추천 서버 선택 기준, 콘솔 서버와 친구 서버 선택까지 확인하세요.",
+      "category": "입문 가이드",
+      "published": "2026-10-23",
+      "updated": "2026-10-23",
+      "minutes": 4,
+      "file": "once-human-beginner-server-selection.html",
+      "sections": [
+        { "id": "scenario-basics", "title": "01. 서버보다 먼저 시나리오를 확인하세요" },
+        { "id": "novice", "title": "02. 처음이라면 터치 오브 스카이(초보자)" },
+        { "id": "recommended-server", "title": "03. 같은 시나리오에 서버가 여러 개라면?" },
+        { "id": "friend-server", "title": "04. 친구와 같이 한다면 친구 서버가 우선입니다" },
+        { "id": "console-server", "title": "05. 콘솔 서버는 표시를 확인하세요" },
+        { "id": "checklist", "title": "06. 서버 선택 전 체크리스트" }
+      ],
+      "searchIntent": "once-human-beginner-server-selection",
+      "searchQuestions": [
+        "원스 휴먼 초보자 서버 추천",
+        "원스 휴먼 처음 서버 뭐 고르나요",
+        "원스 휴먼 시나리오 추천",
+        "원스 휴먼 서버 선택 방법"
+      ],
+      "quickAnswer": {
+        "text": "혼자 처음 시작한다면 터치 오브 스카이(초보자)의 추천 서버 목록을 먼저 확인하고, 그중 최신 서버를 우선 선택하세요. 친구가 이미 플레이 중이라면 친구의 정확한 서버를 맞추는 것이 먼저입니다.",
+        "steps": [
+          "처음이라면 터치 오브 스카이(초보자)를 확인합니다.",
+          "추천 서버 목록 안에서 최신 서버를 우선 확인합니다.",
+          "친구가 있다면 지역·시나리오·정확한 서버명을 먼저 맞춥니다."
+        ],
+        "caution": "〖Console〗 표시 서버는 콘솔 전용입니다. 여러 플랫폼의 친구와 함께 플레이하려면 크로스 플랫폼 서버인지 확인하세요."
+      },
+      "quickFacts": [
+        { "label": "초보자 추천", "value": "터치 오브 스카이(초보자)" },
+        { "label": "서버 선택", "value": "추천 목록의 최신 서버 우선" }
+      ],
+      "platforms": ["PC", "모바일", "PS5", "Xbox Series X|S"],
+      "reviewed": true,
+      "reviewedDate": "2026-10-23",
+      "sourceType": "official",
+      "verificationStatus": "partially-verified",
+      "freshness": "patch-sensitive",
+      "reviewNote": "2026년 공식 서버 오픈 안내와 콘솔판 출시 FAQ를 대조했습니다. 초보자 시나리오 추천, 추천 목록의 최신 서버 우선, 콘솔 전용 서버 및 친구 서버 선택 규칙은 공식 자료로 확인했습니다. 현재 게임의 지역별 실제 서버 목록과 화면 표시는 직접 확인하지 못했으므로 전체 검수 완료로 표시하지 않습니다.",
+      "reviewSources": [
         {
-          "title": "콘솔판 출시 FAQ Q2·Q20~Q22",
+          "title": "Once Human 공식 서버 오픈 안내",
+          "url": "https://www.oncehuman.game/kr/news/update/20260824/40776_1312055.html",
+          "published": "2026-08-24",
+          "checkedDate": "2026-10-23",
+          "note": "초보자 시나리오, 추천 최신 서버, Manibus(Novice), Console 서버 표기 대조"
+        },
+        {
+          "title": "Once Human 콘솔판 출시 FAQ",
           "url": "https://www.oncehuman.game/kr/news/update/20260820/40776_1311774.html",
           "published": "2026-08-27",
           "checkedDate": "2026-10-23",
-          "note": "문서 표시 날짜 기준. 지역·초대·서버 이동·콘솔 예외"
-        },
-        {
-          "title": "금기의 섬 및 RaidZone 서버 공지",
-          "url": "https://www.oncehuman.game/kr/news/update/20261020/40776_1317127.html",
-          "published": "2026-10-20",
-          "checkedDate": "2026-10-23",
-          "note": "더 많은 서버와 특별 초대 코드 표기를 대조"
-        },
-        {
-          "title": "날코트 대륙 생존 가이드",
-          "url": "https://www.oncehuman.game/kr/news/update/20250423/40776_1229727.html",
-          "published": "2025-04-23",
-          "checkedDate": "2026-10-23",
-          "note": "서브 월드 이동 안내 대조"
-        },
-        {
-          "title": "과거 커뮤니티 FAQ",
-          "url": "https://www.oncehuman.game/kr/banner/20250918/41909_1259975.html",
-          "published": "2025-09-18",
-          "checkedDate": "2026-10-23",
-          "note": "서버 간 이동에 관한 과거 안내는 2026년 FAQ보다 우선하지 않음"
+          "note": "친구 서버 선택, 지역, 특별 초대 코드, 크로스플레이와 콘솔 예외 대조"
         }
       ],
       "relatedGuides": [
-        {
-          "slug": "beginner-guide",
-          "reason": "서버를 맞췄다면 초반 탐험과 장비 제작의 진행 순서를 확인하세요."
-        }
+        { "slug": "play-with-friends-same-server", "reason": "친구가 이미 플레이 중이라면 정확한 서버를 맞추는 방법을 확인하세요." },
+        { "slug": "beginner-guide", "reason": "서버를 선택했다면 초반 탐험과 장비 제작의 진행 순서를 확인하세요." }
       ],
-      "reviewWarning": "공식 문서로 대조한 안내입니다. 현재 서버의 초대 제한과 플랫폼별 화면은 게임 내에서 다시 확인하세요."
+      "reviewWarning": "공식 자료로 대조한 안내입니다. 실제 서버 목록과 추천 상태는 운영 상황에 따라 달라질 수 있으므로 현재 게임 화면을 최종 기준으로 확인하세요."
     }
   ]
 }
