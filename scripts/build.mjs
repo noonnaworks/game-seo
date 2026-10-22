@@ -12,7 +12,7 @@ const site = JSON.parse(await read('content/site.json'));
 validateEditorial(site);
 const layout = await read('templates/layout.html');
 const escape = value => String(value).replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]);
-const safeJson = value => JSON.stringify(value).replace(/</g, '\\u003c');
+const safeJson = value => JSON.stringify(value).replace(/</g, '\u003c');
 const base = new URL(site.baseUrl);
 if (!['https:', 'http:'].includes(base.protocol) || base.pathname !== '/' || base.search || base.hash) throw new Error('baseUrl에는 경로 없는 도메인을 입력하세요. 예: https://example.com');
 const absolute = route => new URL(route, base).href;
@@ -65,7 +65,7 @@ for (const game of site.games) {
   const crumbs = [{ name: '게임 목록', url: '/games/' }, { name: game.name, url: gameUrl(game) }];
   await page(gameUrl(game), `${game.name} (${game.koreanName}) 공략 모음 | ${site.name}`, `${game.name} 입문 가이드와 공략 모음. ${game.description}`, hub(game, guides, crumbs), { crumbs });
 }
-for (const guide of sorted) {
+for (const guide of site.guides) {
   const game = gameFor(guide);
   const article = await read(`content/${guide.file}`);
   const crumbs = [{ name: '게임 목록', url: '/games/' }, { name: game.name, url: gameUrl(game) }, { name: guide.category, url: guideUrl(guide) }];
