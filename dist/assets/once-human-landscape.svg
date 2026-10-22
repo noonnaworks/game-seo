@@ -1,1 +1,39 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760"><defs><linearGradient id="sky" x2="0" y2="1"><stop stop-color="#183e40"/><stop offset="1" stop-color="#839d82"/></linearGradient><linearGradient id="front" x2="0" y2="1"><stop stop-color="#284e46"/><stop offset="1" stop-color="#102e2e"/></linearGradient><pattern id="grid" width="90" height="90" patternUnits="userSpaceOnUse"><path d="M90 0H0V90" fill="none" stroke="#fff" stroke-opacity=".055"/></pattern></defs><path fill="url(#sky)" d="M0 0h1200v760H0z"/><circle cx="852" cy="240" r="124" fill="#d4d9b0" opacity=".8"/><circle cx="852" cy="240" r="157" fill="none" stroke="#d4d9b0" opacity=".2"/><path d="m0 455 175-145 130 120 169-245 219 260 165-110 190 132 152-138v431H0" fill="#536f64"/><path d="m0 536 193-126 117 87 205-131 192 195 189-156 304 96v259H0" fill="#3b5d52"/><path d="m0 653 214-75 214 63 235-136 246 112 291-78v221H0" fill="url(#front)"/><g fill="#163c35"><path d="m98 335-65 204h130zm0 60-89 213h179z"/><path d="m1096 355-75 235h150zm0 70-104 245h208z"/><path d="m190 470-42 140h84z"/></g><path d="m540 760 104-153 20-12 27 9-76 156" fill="#b9bba0" opacity=".45"/><g fill="#102b2c"><circle cx="653" cy="534" r="10"/><path d="m644 547-8 48 10 4-3 40h9l7-37 9 35h9l-7-48-2-36-10-9z"/><path d="m640 551-9 8-9 34 8 2 14-29m23-10 14 21 9-5-15-28"/><path d="m631 550-11-2-5 37 15 3z"/></g><path fill="url(#grid)" d="M0 0h1200v760H0z"/><g fill="none" stroke="#dce0c2" opacity=".45"><path d="M45 80V45h35m1040 0h35v35M45 680v35h35m1040 0h35v-35"/><path d="M828 240h48m-24-24v48"/></g><text x="60" y="110" fill="#dde4d3" font-family="monospace" font-size="16" letter-spacing="5">FIELD NOTES / 001</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+  <defs>
+    <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#131c31"/><stop offset=".65" stop-color="#354b62"/><stop offset="1" stop-color="#6a777f"/></linearGradient>
+    <linearGradient id="ground" x2="0" y2="1"><stop stop-color="#233e49"/><stop offset="1" stop-color="#0a141e"/></linearGradient>
+    <radialGradient id="haze"><stop stop-color="#9db2bb" stop-opacity=".3"/><stop offset="1" stop-color="#587c92" stop-opacity="0"/></radialGradient>
+    <pattern id="grain" width="7" height="7" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".55" fill="#d2e3e5" opacity=".065"/></pattern>
+    <g id="pine"><path d="m0-140-29 61h13l-30 54h24l-31 56h106L22-25h24L16-79h13z"/><path d="M-5 15H5v54H-5z"/></g>
+  </defs>
+  <path fill="url(#sky)" d="M0 0h1200v760H0z"/>
+  <ellipse cx="780" cy="290" rx="470" ry="300" fill="url(#haze)"/>
+  <circle cx="878" cy="198" r="90" fill="#a7a6bc" opacity=".52"/>
+  <path d="M824 112c100 10 145 90 101 164a90 90 0 0 0-101-164" fill="#d1c9da" opacity=".35"/>
+  <g fill="none" stroke="#a3b4c7" stroke-width="1" opacity=".12"><circle cx="878" cy="198" r="112"/><path d="M878 73v-20m0 290v-20M751 198h-20m291 0h-20"/></g>
+  <path d="m0 402 94-60 98 29 133-117 155 165 141-62 138 39 127-79 161 111 153-54v386H0" fill="#425567"/>
+  <path d="m0 465 178-64 121 70 150-48 162 39 135-47 128 45 158-82 168 47v335H0" fill="#2f4557"/>
+  <!-- Distant industrial skyline -->
+  <g fill="#243847"><path d="M328 467V355h63v112m12 0V376h101v91m20 0V327h40v140m28 0V392h94v75"/><path d="m321 355 39-29 31 29m14 21 49-23 50 23m17-49 23-30 23 30"/></g>
+  <g fill="none" stroke="#263a49" stroke-width="6"><path d="m455 473 46-264 46 264m-75-90h58m-67 50h80m-55-135h29m-38 40h47m-44 6 41 39m-45 0 57 50M501 209v-43m-22 35h44"/><path d="M502 235c98 25 199 23 296-7" stroke-width="2"/></g>
+  <g fill="#92b7bb" opacity=".5"><path d="M346 373h7v10h-7m17-10h7v10h-7m67 27h9v9h-9m20-9h9v9h-9m82-57h9v12h-9"/></g>
+  <path d="M0 553c170-38 205 1 374-24s256-48 429-11 261-3 397-33v275H0z" fill="#1d3442"/>
+  <path d="m0 641 158-46 167 40 159-45 144 14 184-65 203 55 185-19v185H0" fill="url(#ground)"/>
+  <path d="m548 760 120-140 73-41 14 5-68 59-71 117" fill="#5a7279" opacity=".5"/>
+  <g fill="#152c38"><use href="#pine" transform="translate(115 444) scale(1.4)"/><use href="#pine" transform="translate(201 476) scale(.8)"/><use href="#pine" transform="translate(1005 455) scale(1.3)"/><use href="#pine" transform="translate(1117 455) scale(1.7)"/><use href="#pine" transform="translate(924 488) scale(.65)"/></g>
+  <g fill="#0d1c27"><use href="#pine" transform="translate(39 590) scale(2.3)"/><use href="#pine" transform="translate(1185 604) scale(2)"/></g>
+  <!-- Original survivor silhouette -->
+  <g fill="#0c1722" stroke="#6f8d9c" stroke-width="1.3">
+    <path d="m716 475 5-19 19-6 17 10 2 19-13 16-20-4z"/>
+    <path d="m723 490-17 14-9 67 14 20-5 66 13 3 16-63 9 60 14 1 1-80 9-55-17-29z"/>
+    <path d="m709 499-18 8-10 55 17 10 13-37m48-31 13 12 18 48-10 5-25-38"/>
+    <path d="m707 511-15-8-11 16-4 40 21 5z" fill="#1a303d"/>
+    <path d="m770 525 7-4 29 71-6 3z"/>
+  </g>
+  <path d="m717 499 32 1m-35 44 42 6" fill="none" stroke="#7c9da4" stroke-width="2" opacity=".6"/>
+  <g fill="#101f2b"><path d="m140 760 30-66 49-9 36 75m685 0 32-62 50-16 29 78"/><path d="m306 680 15-35 40 2 18 33m489-67 20-27 26 4 8 30"/></g>
+  <path fill="url(#grain)" d="M0 0h1200v760H0z"/>
+  <g fill="none" stroke="#9cc5ca" opacity=".42"><path d="M42 75V42h34m1048 0h34v33M42 685v33h34m1048 0h34v-33"/><path d="M64 100h70m-70 8h35"/></g>
+  <text x="62" y="83" fill="#b8d7db" font-family="monospace" font-size="13" letter-spacing="3">ONCE HUMAN / SURVIVAL NOTES</text>
+  <text x="1138" y="704" text-anchor="end" fill="#8fa8ba" font-family="monospace" font-size="10" letter-spacing="2">PLAYNOTE · CONCEPT ART</text>
+</svg>

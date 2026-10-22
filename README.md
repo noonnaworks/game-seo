@@ -1,90 +1,116 @@
-# 플레이노트 · game-seo
+# 플레이노트 · NoonNa Works
 
-NoonnaWorks의 SEO 중심 게임 공략 사이트 기본 뼈대입니다. 밝은 반응형 디자인에 Once Human 예시 공략을 담았습니다. 결과물은 HTML·CSS·SVG뿐이며 방문자의 JavaScript 실행 없이 모든 글과 링크를 읽을 수 있습니다. 데이터베이스, 유료 서비스, 외부 라이브러리, 추적 스크립트는 사용하지 않습니다.
+한국 게이머가 막힌 문제의 답과 검토 근거를 빠르게 확인하는 정적 공략 사이트입니다. 사이트는 데이터베이스·유료 서비스·외부 프레임워크·방문자용 JavaScript 없이 HTML과 CSS로 동작합니다.
 
-## 시작하기
+현재 UI는 밝은 아이보리·화이트 배경에 짙은 차콜 본문과 청록 포인트를 사용합니다. 홈은 게임 정보와 공략 바로가기, 상세 페이지는 제목 → 짧은 설명 → 핵심 정리 → 검토 한 줄 → 목차·본문 순서입니다. 적용 조건·플랫폼·상세 검토 근거는 하단 공식 자료 근처에서 펼쳐 확인합니다. 검수 데이터나 상태를 바꾸지 않고 표현 위치와 강도만 조정했습니다. [최신 UI 변경 기록](docs/UI_REDESIGN.md)을 참고하세요.
 
-무료 **Node.js 20 이상**만 필요합니다. 패키지 설치(`npm install`)는 필요 없습니다.
+## 실행과 검사
+
+Node.js 20 이상을 사용합니다. `npm install`은 필요 없습니다.
 
 ```sh
 npm run build
-npm run check
-npm run check:preview
+node scripts/check.mjs
+node scripts/check-preview.mjs
 npm run dev
 ```
 
-브라우저에서 <http://127.0.0.1:4173/>을 엽니다. `dev`는 한 번 빌드한 뒤 미리보기 서버를 실행합니다. 수정했다면 다른 터미널에서 `npm run build`를 다시 실행하고 브라우저를 새로고침하세요. 자동 새로고침은 없습니다. 서버는 `Ctrl+C`로 종료합니다.
+Windows PowerShell의 실행 정책이 npm을 차단하면 `npm.cmd run build`, `npm.cmd run dev`를 사용하세요. 미리보기는 <http://127.0.0.1:4173/>입니다. `dev`는 시작할 때 한 번 빌드합니다. 수정 후 다른 터미널에서 다시 빌드하고 브라우저를 새로고침하세요. 종료는 Ctrl+C입니다.
 
-Windows PowerShell에서 npm 실행 정책 오류가 나면 `npm.cmd run build`처럼 실행하거나 `node scripts/build.mjs`, `node scripts/check.mjs`, `node scripts/serve.mjs`를 직접 실행하세요.
+`check.mjs`는 SEO·링크·본문 보존·메타데이터·반응형 소스 규칙을 검사합니다. 실제 화면에서 가로 넘침이 없는지까지 보장하지는 않습니다. `check-preview.mjs`는 실제 로컬 HTTP 요청이 필요합니다. 검사가 통과해도 편집 경고가 남으면 게시 품질표를 별도로 완료해야 합니다.
 
-`dist/`는 이미 생성되어 있습니다. 웹 서버의 루트에 이 폴더의 **내용 전체**를 올리면 됩니다. HTML 파일 더블 클릭보다 위 미리보기 서버를 사용하세요. 링크가 `/`에서 시작하므로 하위 경로 배포가 아닌 도메인 루트 배포를 기준으로 합니다.
+## 원본과 결과물
 
-## 페이지 주소
-
-| 주소 | 역할 |
+| 원본 | 역할 |
 | --- | --- |
-| `/` | 홈, 추천 공략과 최근 공략 |
-| `/games/` | 전체 게임 목록 |
-| `/games/once-human/` | Once Human의 공략 모음 |
-| `/guides/once-human/beginner-guide/` | 초보자 공략 예시 |
-| `/sitemap.xml` | 생성된 모든 페이지의 검색엔진용 목록 |
-| `/robots.txt` | 크롤링 허용과 사이트맵 위치 |
+| `content/site.json` | 사이트·게임·공략 정보와 선택적 검토 데이터 |
+| `content/*.html` | 공략 본문. 기존 글의 본문과 링크는 보존 |
+| `content/public/` | 루트에 복사할 정적 인증 파일 |
+| `templates/layout.html` | Google verification, SEO head, 공통 메뉴·푸터 |
+| `templates/404.html` | 404 화면 원본 |
+| `assets/style.css` | 콘텐츠 중심의 반응형 스타일 |
+| `assets/favicon.svg` | 간단한 플레이노트 심볼 |
+| `assets/once-human-landscape.svg` | 기존 자체 제작 그림. 현재 본문·공략 목록에는 표시하지 않음. 기존 OG URL 보존용 |
+| `scripts/build.mjs` | 기존 URL·SEO·사이트맵·robots·정적 결과 생성 |
+| `scripts/views.mjs` | 홈·게임 허브·핵심 답·관련 공략·검토 근거 표시 |
+| `scripts/content-model.mjs` | 선택 필드 검증, 검색 의도 충돌 및 재검토 경고 |
+| `scripts/check.mjs` | 빌드 결과 정적 검사 |
+| `scripts/check-preview.mjs` | HTTP·404·파일 경계 검사 |
+| `scripts/serve.mjs` | 로컬 정적 미리보기 서버 |
+| `docs/CONTENT_WORKFLOW.md` | 게시 품질 Gate와 운영 규칙 |
+| `docs/FINAL_REVIEW.md` | 이번 개편의 확인 결과와 남은 검수 |
 
-## 파일별 역할
+`dist/`는 빌드 결과입니다. 직접 수정하지 마세요. HTML 5개, 404, assets, 인증 파일, sitemap, robots가 원본에서 생성됩니다. `dist/.generated-pages.json`은 생성 페이지 기록입니다. 삭제한 공략의 이전 index.html만 빌드가 정리하며, 출력 폴더를 통째로 삭제하지 않습니다.
 
-| 파일 | 역할 |
-| --- | --- |
-| `content/site.json` | 사이트명, 실제 도메인, 작성자, 게임과 공략 정보 |
-| `content/once-human-beginner.html` | 예시 글의 본문. `h2`, `p`, `ul` 등 HTML 사용 |
-| `assets/style.css` | 색상, 글꼴, 여백, 모바일 레이아웃 |
-| `assets/once-human-landscape.svg` | 직접 제작한 콘셉트 일러스트. 공식 게임 스크린샷이 아님 |
-| `assets/favicon.svg` | 브라우저 탭 아이콘 |
-| `templates/layout.html` | 공통 head, 메뉴, 푸터, 본문 바로가기 |
-| `scripts/build.mjs` | 공통 레이아웃과 콘텐츠를 정적 페이지로 생성 |
-| `scripts/check.mjs` | SEO 메타·내부 링크·목차·사이트맵 검사 |
-| `scripts/serve.mjs` | 로컬 미리보기 서버 |
-| `scripts/check-preview.mjs` | 실제 HTTP 응답·파일 경로·404 검사 |
-| `package.json` | 빌드·검사·미리보기 단축 명령 |
-| `.gitignore` | 의존성 폴더 등 불필요한 파일 제외 |
-| `dist/` | 실제 배포 결과. 직접 고치면 다음 빌드 때 덮어씁니다 |
+## Cloudflare Pages
 
-## 공략 글 추가하기
+기존 Node 빌드와 출력 디렉터리 `dist/`를 유지합니다. 저장소에서 추적 중인 dist의 추적 방식도 바꾸지 않았습니다. 계정의 실제 대시보드 설정은 이 저장소에서 확인할 수 없으므로 이번 작업에서 변경하거나 배포하지 않습니다. 현재 선호 도메인은 `https://game-seo.pages.dev`이며, 커스텀 도메인 연결 때만 `baseUrl`을 변경하세요.
 
-1. `content/once-human-beginner.html`을 복사해 `content/once-human-exploration.html`을 만듭니다. 본문만 작성하고 `<html>`, `<head>`, `<h1>`은 넣지 않습니다.
-2. `content/site.json`의 `guides` 배열에 기존 항목을 복사하고 값을 바꿉니다. 같은 게임 안에서 `slug`는 중복되면 안 됩니다.
+루트 `404.html`을 빌드합니다. Cloudflare Pages는 최상위 404.html이 없으면 SPA로 취급할 수 있으므로, 이 파일을 누락하지 마세요. [Cloudflare 공식 문서](https://developers.cloudflare.com/pages/configuration/serving-pages/)에 따른 구성입니다. 실제 배포 후에도 존재하지 않는 URL의 HTTP 404를 확인해야 합니다.
+
+Google HTML 인증 파일은 현재 인증 방식의 실제 사용 여부를 확인할 수 없어 삭제하지 않았습니다. 원본은 `content/public/googled3c5ad3275b62498.html`입니다. 빌드가 루트로 복사합니다. 인증 meta는 공통 레이아웃에서 유지합니다. 추후 GSC에서 파일 인증을 사용하지 않음을 확인한 뒤 필요하면 원본과 생성 파일을 함께 정리하세요.
+
+## 페이지와 링크
+
+- `/`: 게임과 최근 수정 공략
+- `/games/`: 게임 목록
+- `/games/once-human/`: 실제 공략만 모은 게임 목차
+- `/guides/once-human/beginner-guide/`: 기존 입문 공략
+- `/guides/once-human/play-with-friends-same-server/`: 기존 서버·멀티플레이 공략
+- `/sitemap.xml`, `/robots.txt`: 빌드에서 자동 생성
+
+검색 유입 URL, title, description, canonical, Open Graph, Article/WebPage와 BreadcrumbList JSON-LD는 유지합니다. sitemap lastmod와 Article dateModified는 `updated`를 사용합니다. 단순 검토일로 수정일을 바꾸지 마세요. 404는 noindex이며 sitemap에 포함하지 않습니다.
+
+## 글 추가와 수정
+
+1. [게시 품질 Gate](docs/CONTENT_WORKFLOW.md)를 먼저 읽고 기존 글과 검색 의도가 겹치는지 확인합니다. 같은 문제의 다른 표현이라면 기존 글을 확장합니다.
+2. `content/`에 본문 HTML을 작성합니다. html/head/h1을 넣지 않습니다. 실제 단계는 h2와 고유 id를 사용합니다.
+3. `content/site.json`의 기존 guides 배열에 항목을 추가합니다. slug는 소문자·하이픈으로 작성합니다.
+4. `sections`의 id와 본문 h2의 id를 맞춥니다. 마지막 공식 출처는 `<section class="sources" aria-labelledby="sources">`로 작성하면 관련 공략 다음에 표시됩니다.
+5. 필요한 선택 필드만 작성하고 build → check → check-preview → 로컬 화면 검수 순서로 확인합니다.
+
+카테고리는 실제 글이 있는 경우에만 보입니다. 초보자·멀티플레이·서버·오류·아이템·위치·빌드·업데이트를 지원하며, 그 외 카테고리도 기존 이름으로 표시합니다. 사이트 규모를 크게 보이게 하는 빈 카테고리·가짜 통계·인기순위는 만들지 않습니다.
+
+## 선택적 편집 데이터
+
+기존 필드만 있어도 빌드됩니다. 새 필드는 다음처럼 필요한 것만 추가합니다.
 
 ```json
 {
-  "slug": "exploration-guide",
-  "game": "once-human",
-  "title": "Once Human 정착지 탐험 공략",
-  "shortTitle": "정착지 탐험의 기본 순서",
-  "description": "글 내용을 정확히 설명하는 페이지 고유의 소개문을 작성하세요.",
-  "category": "탐험 가이드",
-  "published": "2026-10-22",
-  "updated": "2026-10-22",
-  "minutes": 4,
-  "file": "once-human-exploration.html",
-  "sections": [{ "id": "preparation", "title": "01. 탐험 준비" }]
+  "searchIntent": "once-human-play-with-friends",
+  "searchQuestions": ["원스 휴먼 친구와 같은 서버 들어가기"],
+  "quickAnswer": {
+    "text": "검색한 문제의 실제 답을 먼저 씁니다.",
+    "steps": ["사용자가 해야 하는 행동"],
+    "caution": "관련된 예외가 있을 때만 작성합니다."
+  },
+  "quickFacts": [{ "label": "필요 조건", "value": "이 글에 실제 필요한 조건" }],
+  "reviewed": false,
+  "verificationStatus": "unverified",
+  "freshness": "patch-sensitive",
+  "relatedGuides": [{ "slug": "beginner-guide", "reason": "이 글을 읽은 다음 실제로 도움이 되는 이유" }]
 }
 ```
 
-3. 본문에 목차와 일치하는 `<h2 id="preparation">01. 탐험 준비</h2>`를 작성합니다. `sections`에는 실제 본문 제목만 넣습니다.
-4. `npm run build`와 `npm run check`를 실행합니다. 홈, 게임별 모음, 공략 페이지, 사이트맵이 함께 갱신됩니다.
+`reviewedDate`는 실제 자료 검토일, `sourceType`은 official/in-game/media/community/mixed, `verificationStatus`는 verified/partially-verified/unverified입니다. `reviewed: true`만으로 확인 완료가 되지 않습니다. 실제 확인 범위는 `reviewNote`, 독자가 즉시 알아야 할 제한은 `reviewWarning`에 씁니다. 검토 근거는 `reviewSources`의 title/url/published/checkedDate/note에 기록합니다. 공식 출처가 있다는 사실과 해당 글 전체가 검증되었다는 사실을 구분하세요.
 
-게임 추가 시 `games` 배열에 `slug`, `name`, `koreanName`, `genre`, `description`, `image`를 갖는 객체를 넣습니다. 이미지 파일은 `assets/`에 두고 `image`에는 `/assets/my-game.svg`처럼 적습니다. 새로운 공략의 `game` 값을 해당 게임의 `slug`와 일치시키세요. 이미지가 없으면 공용 콘셉트 이미지가 표시됩니다. 글이 없는 게임도 모음 페이지가 생성됩니다.
+`published`는 최초 게시일, `updated`는 의미 있는 본문 수정일입니다. 검토만 했다면 updated를 바꾸지 않습니다. `platforms`, `gameVersion`은 확인된 값만 넣습니다. `quickFacts`는 글 종류에 맞게 골라 쓰며 예상 플레이 시간을 읽는 시간으로 대신하지 않습니다. 읽는 시간은 기존 minutes 필드입니다.
 
-날짜는 실제 작성·수정일을 `YYYY-MM-DD`로 입력하세요. 최근 공략은 `updated` 내림차순으로 표시합니다. JSON에는 주석이나 마지막 항목 뒤 쉼표를 넣지 마세요. 본문 HTML은 작성자가 관리하는 파일을 그대로 삽입하므로 외부 사용자가 제출한 HTML을 직접 넣지 마세요.
+재검토 경고는 관리자 검사에서만 표시합니다. stable은 180일, patch-sensitive는 30일, time-sensitive는 7일을 기본 점검 간격으로 사용합니다. 이는 운영용 기준이며 사용자에게 자동 경고를 붙이지 않습니다. 검토 기록이 없는 글은 검토 완료로 표시하지 않습니다.
 
-게임이나 글을 제거하면 빌드 시 이전에 생성한 해당 HTML도 제거합니다. `dist/`에는 직접 관리하는 파일을 넣지 마세요. 생성 파일 목록은 `dist/.generated-pages.json`에 기록합니다.
+`changelog`는 선택적인 `{ "date": "YYYY-MM-DD", "note": "실제 중요한 변경" }` 배열입니다. 아직 별도 이력 관리 시스템은 없습니다. 추후 `/about/`, `/about/editorial-policy/`가 필요하면 공통 page 생성기를 재사용하되 기존 URL은 바꾸지 마세요.
 
-## 배포 전 SEO 설정
+## 설명용 이미지
 
-1. **`content/site.json`의 `baseUrl`을 `https://example.com`에서 실제 도메인으로 바꾸세요.** 예: `https://playnote.your-domain.com`. 도메인은 제공되지 않아 예시 값을 사용했습니다.
-2. 빌드와 검사를 다시 실행합니다. 모든 canonical, Open Graph URL, JSON-LD URL, sitemap과 robots가 실제 도메인으로 갱신됩니다.
-3. 정적 호스팅의 문서 루트를 `dist/`로 설정하고 HTTPS와 디렉터리 `index.html` 제공을 활성화합니다. 없는 URL은 실제 HTTP 404로 응답하도록 설정하세요.
-4. 배포 후 페이지와 `/sitemap.xml`, `/robots.txt`를 확인하고 필요하면 검색엔진의 관리 도구에 사이트맵을 제출합니다.
+현재 실제 UI 스크린샷은 없으며 빈 이미지 영역을 표시하지 않습니다. 설명에 도움이 되는 위치에서 직접 촬영·허가·공식 배포 조건이 확인된 이미지만 사용하세요. 외부 hotlink는 금지합니다.
 
-HTML은 `lang="ko"`, 페이지별 고유 title·description·canonical, Open Graph, Article/WebPage·BreadcrumbList JSON-LD, 단일 h1, 의미 있는 header/nav/main/article/section/footer를 포함합니다. 목차와 게임별 내부 링크를 제공하며 본문은 처음부터 HTML에 담깁니다. 소셜 공유 이미지는 서비스 호환성을 위해 실제 운영 시 PNG/JPEG 파일로 교체하세요. 기본 SVG는 일부 소셜 서비스에서 미리보기로 표시되지 않을 수 있습니다.
+```html
+<figure class="screenshot">
+  <img src="/assets/server-menu.webp" alt="친구 서버를 찾는 더 많은 서버 메뉴" width="1280" height="720" loading="lazy">
+  <figcaption>현재 게임 버전, 확인할 메뉴, 촬영자 또는 이미지 출처.</figcaption>
+</figure>
+```
 
-이 구성은 검색엔진이 읽기 쉬운 기본 구조이며 검색 순위를 보장하지 않습니다. 예시 본문에는 참고한 공식 자료와 업데이트에 관한 안내를 넣었습니다. 실제 운영 전 콘텐츠를 현재 게임 버전과 대조하세요.
+`images`에 file/alt/caption/source/sourceUrl/imageType/rightsNote/width/height를 선택적으로 기록할 수 있습니다. imageType은 official/gameplay/user-permitted입니다. `file`은 `/assets/` 아래 로컬 경로여야 합니다. 이 메타데이터는 권리·파일 검사와 향후 자동화용이며 본문에 자동으로 이미지를 삽입하지 않습니다. 관련 문단 옆에 figure를 직접 작성하세요. 첫 화면의 핵심 이미지라면 loading=lazy를 무조건 쓰지 않습니다. WebP·AVIF와 실제 크기를 고려하세요.
+
+RSS는 현재 두 글 규모에서 별도 배포·검사 면적을 늘리지 않기 위해 생략했습니다. 사이트맵은 유지합니다.
